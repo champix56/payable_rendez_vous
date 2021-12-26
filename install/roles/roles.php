@@ -51,7 +51,7 @@ function rdv_uninstall_roles()
     foreach($users as $user)
     {
         $user->set_role('subscriber');
-    error_log("\t-id:".$user->data->ID.";name:".$user->data->user_name." -> role: suscriber ");
+    error_log("\t-id:".$user->data->ID.";name:".$user->data->user_login." -> role: suscriber ");
 
     }
     error_log("remove roles :");
