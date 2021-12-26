@@ -3,10 +3,9 @@ function get_consultants($andAdmin = true)
 {
     $all_users = get_users();
     $specific_users = array();
-
     foreach ($all_users as $user) {
         $isAdmin = false;
-        if (in_array("administrator", $user->data->roles)) {
+        if (in_array("administrator", $user->roles)) {
             $isAdmin = true;
         }
         //avec admin ou sans admin et user pas admin et contient manage_rendez_vous
