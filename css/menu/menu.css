@@ -1,0 +1,17 @@
+.btn{
+    color: white;
+    padding:5px 15px;
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    background-color: lightseagreen;
+}
+.btn.warning{
+    background-color: tomato;
+}
+.btn.primary{
+    background-color: skyblue;
+}
+.rdv_custom_menu
+{
+    padding-right: 15px;
+}
