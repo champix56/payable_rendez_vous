@@ -1,0 +1,35 @@
+<?php
+{ 
+    ["data"]=> object(stdClass) 
+    { 
+        ["ID"]=> string(1) "2" ,
+        ["user_login"]=> string(1) "a",
+        ["user_pass"]=> string(34) "$P$BRhrrUdF2.yzKJHpimCWkKGUHXEGyf1",
+        ["user_nicename"]=> string(1) "a" ,
+        ["user_email"]=> string(7) "a@aa.fr" ,
+        ["user_url"]=> string(0) "" ,
+        ["user_registered"]=> string(19) "2021-12-26 06:57:14" ,
+        ["user_activation_key"]=> string(45) "1640501834:$P$B6O4tHLiL7ZK8vtp5H4am0NDeSIZGp1" ,
+        ["user_status"]=> string(1) "0" ,
+        ["display_name"]=> string(1) "a" 
+    } 
+    ["ID"]=> int(2) ,
+    ["caps"]=> array(1) 
+    { 
+        ["consultant"]=> bool(true) 
+    }, 
+    ["cap_key"]=> string(15) "wp_capabilities" ,
+    ["roles"]=> array(1) 
+    { 
+        [0]=> string(10) "consultant" 
+    } 
+    ["allcaps"]=> array(4) 
+    { 
+        ["read"]=> bool(true) 
+        ["level_0"]=> bool(true) 
+        ["manage_rendez_vous"]=> bool(true) 
+        ["consultant"]=> bool(true) 
+    } 
+    ["filter"]=> NULL 
+    ["site_id":"WP_User":private]=> int(1) }
+?>
