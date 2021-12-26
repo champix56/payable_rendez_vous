@@ -7,7 +7,7 @@ global $wpdb;
     global $PLUGIN_DIR;
     $PLUGIN_DIR=plugin_dir_path(__FILE__);
     global $PLUGIN_BASE_URL;
-    $PLUGIN_BASE_URL=plugin_dir_url( __DIR__ );
+    $PLUGIN_BASE_URL=plugin_dir_url( __FILE__ );
     global $PLUGIN_ERROR_FILE;
     $PLUGIN_ERROR_FILE=$PLUGIN_DIR."/WPERROR.log";
     global $PLUGIN_DB_PREFIX;
