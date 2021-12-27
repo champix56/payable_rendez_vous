@@ -12,10 +12,12 @@
 
     function showAddUnAvailabilityPanel() {
         reset_consultant_add_availability();
-        document.querySelector('#rdv_consultant_add_unavailabilities').style.display = "block";
+        //document.querySelector('#rdv_consultant_add_unavailabilities').style.display = "block";
+        jQuery('#rdv_consultant_add_unavailabilities').slideDown(900);
     }
     function reset_consultant_add_unavailability() {
-        document.querySelector('#rdv_consultant_add_unavailabilities').style.display = "none";
+        jQuery('#rdv_consultant_add_unavailabilities').slideUp(900);//.style.display = "none";
+        //document.querySelector('#rdv_consultant_add_unavailabilities').style.display = "none";
 
     }
     
