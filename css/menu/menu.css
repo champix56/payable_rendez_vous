@@ -19,12 +19,17 @@
 }
 
 .vignet_consultant_future_apointement {
-    border-radius: 3px;
+    border-radius: 7px;
     border: 1px solid #dfdfdf;
     padding: 5px 8px;
+    min-width: 140px;
     text-align: center;
+    margin-top:10px;
 }
-
+.vignet_consultant_future_apointement:hover {
+    background-color: rgb(226, 225, 225);
+    box-shadow: 10px 10px 15px lightgray;
+}
 .vignet_consultant_future_apointement .avatar {
     border-radius: 35px;
 }
