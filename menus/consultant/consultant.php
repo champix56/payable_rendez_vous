@@ -19,7 +19,7 @@ function rdv_menu_consultant_my_availabilities(){
 function rdv_register_menu_consultant(){
     global $PLUGIN_SLUG;
     $CONSULT_PLUGIN_SLUG=$PLUGIN_SLUG."_CONSULT";
-    add_menu_page('Espace Consultant','Espace Consultant','manage_rendez_vous',$CONSULT_PLUGIN_SLUG,'rdv_menu_consultant_base_page','dashicons-welcome-widgets-menus',30);
+    add_menu_page('Espace Consultant','Espace Consultant','manage_rendez_vous',$CONSULT_PLUGIN_SLUG,'rdv_menu_consultant_base_page','dashicons-nametag',30);
     add_submenu_page( $CONSULT_PLUGIN_SLUG, 'Mes Disponibilités','Mes Disponibilités', 'manage_rendez_vous', $CONSULT_PLUGIN_SLUG."_MY_AVAILIBILITIES", 'rdv_menu_consultant_my_availabilities' );
     add_submenu_page( $CONSULT_PLUGIN_SLUG, 'Mes Rendez-Vous','Mes Rendez-Vous', 'manage_rendez_vous', $CONSULT_PLUGIN_SLUG."_MY_APOINTMENTS", 'rdv_menu_consultant_my_apointments' );
     add_submenu_page( $CONSULT_PLUGIN_SLUG, 'Historique','Historique', 'manage_rendez_vous', $CONSULT_PLUGIN_SLUG."_HISTO", 'rdv_menu_consultant_histo' );
