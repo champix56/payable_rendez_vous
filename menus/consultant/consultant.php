@@ -28,7 +28,7 @@ function enqueue_consultant_menu_script(){
     global $PLUGIN_BASE_URL;
     
          wp_enqueue_script('consultant_menu_script', $PLUGIN_BASE_URL."js/consultMenuScript.js");
-         wp_enqueue_style( 'common_menu_css', $PLUGIN_BASE_URL."css/menu/menu.css",array(), 'all' );
+        // wp_enqueue_style( 'common_menu_css', $PLUGIN_BASE_URL."css/menu/menu.css",array(), 'all' );
 }
 add_action('admin_menu', 'rdv_register_menu_consultant');
 ?>

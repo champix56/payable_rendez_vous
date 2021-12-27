@@ -1,17 +1,41 @@
-.btn{
+.btn {
     color: white;
-    padding:5px 15px;
+    padding: 5px 15px;
     border: 1px solid #dfdfdf;
     border-radius: 8px;
     background-color: lightseagreen;
 }
-.btn.warning{
+
+.btn.warning {
     background-color: tomato;
 }
-.btn.primary{
+
+.btn.primary {
     background-color: skyblue;
 }
-.rdv_custom_menu
-{
+
+.rdv_custom_menu {
     padding-right: 15px;
+}
+
+.vignet_consultant_future_apointement {
+    border-radius: 3px;
+    border: 1px solid #dfdfdf;
+    padding: 5px 8px;
+    text-align: center;
+}
+
+.vignet_consultant_future_apointement .avatar {
+    border-radius: 35px;
+}
+
+.consultant_apointements_vignette_list {
+    display: flex;
+    padding:5px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-height: 33vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #fafafc;
 }
