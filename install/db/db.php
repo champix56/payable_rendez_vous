@@ -14,7 +14,7 @@ function rdv_install_db()
     $charset_collate = $wpdb->get_charset_collate();
 
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}consultants(
-        ID BIGINT(20) REFERENCES wp_users(ID),
+        ID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
         biography VARCHAR(1024),
         PRIMARY KEY (ID)
     ) {$charset_collate};";
@@ -33,16 +33,27 @@ function rdv_install_db()
     //error_log($sql);
     dbDelta($sql);
     error_log("\ttable {$PLUGIN_DB_PREFIX}prestation_type ->CREATED");
-
+    /****/
+    $sql = "CREATE TABLE  {$PLUGIN_DB_PREFIX}apointment_state(
+        ID INT PRIMARY KEY,
+        short_name VARCHAR(10),
+        display_name VARCHAR(32),
+        valid_level INT UNIQUE
+    );{$charset_collate};";
+    //error_log($sql);
+    dbDelta($sql);
+    error_log("\ttable {{$PLUGIN_DB_PREFIX}apointment_state ->CREATED");
+    
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}take_apointment(
         consultationID BIGINT(20) UNIQUE AUTO_INCREMENT,
-        consultantID BIGINT(20) REFERENCES wp_users(ID),
-        clientID BIGINT(20) REFERENCES wp_users(ID),
+        consultantID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
+        clientID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
+        stateID INT REFERENCES {$PLUGIN_DB_PREFIX}apointment_state(ID) DEFAULT '-999',
         date DATE ,
         time TIME,
         validation_date TIMESTAMP DEFAULT now(),
-        prestation_type_ID int REFERENCES wp_rdv_prestation_type(ID),
+        prestation_type_ID int REFERENCES {$PLUGIN_DB_PREFIX}prestation_type(ID),
         PRIMARY KEY (consultantID,clientID, date, time)
     ) {$charset_collate};";
     //error_log($sql);
@@ -50,7 +61,7 @@ function rdv_install_db()
     error_log("\ttable {$PLUGIN_DB_PREFIX}take_apointment ->CREATED");
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}consultant_availabilities(
-    consultantID BIGINT(20) REFERENCES wp_users(ID) ,
+    consultantID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID) ,
     day_of_week SMALLINT,
     time_start TIME,
     time_end TIME,
@@ -61,7 +72,7 @@ function rdv_install_db()
     error_log("\ttable {$PLUGIN_DB_PREFIX}consultant_availabilities ->CREATED");
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}consultant_unavailabilities(
-    consultantID BIGINT(20) REFERENCES wp_users(ID),
+    consultantID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
     start DATETIME,
     end DATETIME,
     PRIMARY KEY(consultantID,start,end)
@@ -72,7 +83,7 @@ function rdv_install_db()
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}rendezvous_follows(
     questionID BIGINT(20) AUTO_INCREMENT,
-    consultationID BIGINT(20) REFERENCES wp_rdv_take_apointment(consultationID),
+    consultationID BIGINT(20) REFERENCES {$PLUGIN_DB_PREFIX}take_apointment(consultationID),
     question varchar(128),
     answer varchar(2048),
     PRIMARY KEY(questionID,consultationID)
