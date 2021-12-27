@@ -11,11 +11,17 @@ CREATE TABLE wp_rdv_prestation_type(
     montant DECIMAL,
     temp_nominal int
 );
-
+CREATE TABLE wp_rdv_apointment_state(
+    ID INT PRIMARY KEY,
+    short_name VARCHAR(10),
+    display_name VARCHAR(32),
+    valid_level INT UNIQUE
+);
 CREATE TABLE wp_rdv_take_apointment(
     consultationID BIGINT(20) UNIQUE AUTO_INCREMENT,
     consultantID BIGINT(20) REFERENCES wp_users(ID),
     clientID BIGINT(20) REFERENCES wp_users(ID),
+    stateID INT REFERENCES wp_rdv_apointment_state(ID) DEFAULT '-999',
     date DATE ,
     time TIME,
     validation_date TIMESTAMP DEFAULT now(),
