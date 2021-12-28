@@ -42,14 +42,14 @@ function rdv_install_db()
     );{$charset_collate};";
     //error_log($sql);
     dbDelta($sql);
-    error_log("\ttable {{$PLUGIN_DB_PREFIX}apointment_state ->CREATED");
+    error_log("\ttable {$PLUGIN_DB_PREFIX}apointment_state ->CREATED");
     
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}take_apointment(
         consultationID BIGINT(20) UNIQUE AUTO_INCREMENT,
         consultantID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
         clientID BIGINT(20) REFERENCES {$wpdb->prefix}users(ID),
-        stateID INT REFERENCES {$PLUGIN_DB_PREFIX}apointment_state(ID) DEFAULT '-999',
+        stateID INT DEFAULT '-999' REFERENCES {$PLUGIN_DB_PREFIX}apointment_state(ID),
         date DATE ,
         time TIME,
         validation_date TIMESTAMP DEFAULT now(),
