@@ -1,7 +1,8 @@
 <?php
 function rdv_menu_admin_base_page(){
+    global $PLUGIN_DIR;
     ?><h1>Administration</h1><?php
-
+    include($PLUGIN_DIR.'menus/admin/main.php');
 }
 function rdv_menu_admin_prestations(){
     ?><h1>Configuration prestations</h1><?php
