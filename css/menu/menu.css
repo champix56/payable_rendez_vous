@@ -44,3 +44,12 @@
     overflow-x: hidden;
     background-color: #fafafc;
 }
+.rdv_custom_menu{
+    padding-right: 20px;
+}
+.flex{
+    display: flex;
+}
+.flex.center-child>div{
+    text-align: center;
+}

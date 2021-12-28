@@ -10,9 +10,9 @@ if (strlen($message) > 0) {
     </div>
 <?php }
 ?>
-
-<h2>Mes rendez vous à venir :</h2>
 <div class="rdv_custom_menu">
+<h2>Mes rendez vous à venir :</h2>
+
 <div class="consultant_apointements_vignette_list" >
     <?php
     foreach ($apointments as $apointment) {

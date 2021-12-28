@@ -20,7 +20,7 @@ if (strlen($message) > 0) {
         <p>Update éfféctué</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Ignorer cette notification.</span></button>
     </div>
 <?php } ?>
-<div class="rdv_custom_menu" style="padding-right: 20px;">
+<div class="rdv_custom_menu">
     <div style="display: flex;">
         <button class="btn" onclick="showAddAvailabilityPanel()">Ajouter disponibilité</button>
         <button class="btn primary" onclick="showAddUnAvailabilityPanel()">Ajouter indisponibilité</button>
@@ -87,6 +87,9 @@ if (strlen($message) > 0) {
         </form>
     </div>
     <h2>Mes disponibilités</h2>
+    <?php 
+    if(count($availabilities)<=0){ ?><h5>Aucune disponibilité saisie</h5><?php }
+    else { ?>
     <table class="widefat fixed" cellspacing="0">
         <thead>
             <tr>
@@ -138,8 +141,13 @@ if (strlen($message) > 0) {
             <?php } ?>
         </tbody>
     </table>
+    <?php } ?>
     <hr />
     <h2>Mes indisponibilités à venir</h2>
+    <?php 
+    if(count($unavailabilities)<=0){ ?><h5>Aucune indisponibilité à venir</h5><?php }
+    else { ?>
+  
     <table class="widefat fixed" cellspacing="0">
         <thead>
             <tr>
@@ -187,5 +195,6 @@ if (strlen($message) > 0) {
             <?php } ?>
         </tbody>
     </table>
+    <?php } ?>
     <hr />
 </div>
