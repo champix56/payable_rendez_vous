@@ -1,36 +1,43 @@
-<?php 
-$users = get_consultants();
-    //print_r($users);?>
-    <div class="rdv_custom_menu">
-
-   
+<?php
+$consultants = get_consultants();
+//$apointments = get_clients_apointments()
+?>
+<div class="rdv_custom_menu">
     <form>
-    <label>Selectionner consultant :</label><br/>
-    <select><?php
-    foreach ($users as $value){
-        ?><option value="<?php echo $value->ID ;?>"><?php echo $value->data->display_name ;?></option>
-      <?php
-    }?>
-    </select>
-    <br/>
-    <label>Selectionnez date : <br/><input type="date" name="" id=""></label>
-    <br/>
+        <div class="flex center-child" style="justify-content: space-around;">
+            <div>
+                <label>Selectionner consultant :</label><br />
+                <select><?php
+                        foreach ($consultants as $value) {
+                        ?><option value="<?php echo $value->ID; ?>"><?php echo $value->data->display_name; ?></option>
+                    <?php
+                        } ?>
+                </select>
+            </div>
+            <div>
+                <label>Selectionnez date : <br /><input type="date" name="" id=""></label>
+                <br />
+                <label>Selectionnez heure : <br /><input type="time" name="" id=""></label>
+            </div>
+            <div>
+                <label for="">Selectionnez une prestation : </label><br />
+                <select name="" id="">
+                    <optgroup label="Horaire">
+                        <option value="h">1h/35euros</option>
+                        <option value="h">30Min/20euros</option>
+                    </optgroup>
+                    <optgroup label="questions">
+                        <option value="h">3 questions/35euros</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="flex" style="justify-content: space-around;">
+            <button style="padding: 5px 15px; border-radius: 7px; background-color: tomato; color:white; border:none; " type="reset">Annuler</button>
+            <button style="padding: 5px 15px; border-radius: 7px; background-color: skyblue; color:white; border:none; " type="submit">Valider</button>
+        </div>
+    </form>
+    <h2>Mes rendez-vous</h2>
 
-    <label>Selectionnez heure : <br/><input type="time" name="" id=""></label>
-    <br/>
-<label for="">Selectionnez une prestation : </label><br/>
-<select name="" id="">
-    <optgroup label="Horaire">
-        <option value="h">1h/35euros</option>
-        <option value="h">30Min/20euros</option>
-    </optgroup>
-    <optgroup label="questions">
-        <option value="h">3 questions/35euros</option>
-    </optgroup>
-</select>
-<br/><br/><br/>
-<div style="display: flex;justify-content: space-around;"></div>
-<button style="padding: 5px 15px; border-radius: 7px; background-color: skyblue; color:white; border:none; " type="submit">Valider</button>
-<button style="padding: 5px 15px; border-radius: 7px; background-color: tomato; color:white; border:none; "  type="reset">Annuler</button>
-</form>
 </div>
