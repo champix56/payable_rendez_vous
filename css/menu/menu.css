@@ -1,3 +1,5 @@
+#wpfooter,#calendar{display: none !important;}
+
 .btn {
     color: white;
     padding: 5px 15px;
@@ -65,4 +67,32 @@
 }
 .consultant-viewer>.infos{
     display:none;
+}
+/*client take apointment */
+#client_take_apointment_question_content{
+     resize: none; 
+     width: 100%;
+}
+.loading-prestation-container{
+    text-align: center;
+    display: none;
+}
+.loading-prestation-img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.presta-infos h5{
+    margin-bottom: 2px;
+    margin-top: 5px;
+    font-weight: 900;
+}
+.take_apointement_datetime>input{display:inline;}
+
+.novalid-state{
+    color: tomato;
+    font-weight: 900;
+}
+.valid-state{
+    color:springgreen;
+    font-weight: 900;
 }
