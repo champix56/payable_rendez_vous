@@ -1,8 +1,11 @@
 <?php
 function rdv_menu_admin_base_page(){
     global $PLUGIN_DIR;
+    global $PLUGIN_BASE_URL;
     ?><h1>Administration</h1><?php
-    include($PLUGIN_DIR.'menus/admin/main.php');
+    include($PLUGIN_DIR.'menus/admin/main/main.php');
+    wp_enqueue_script('consultant_menu_script', $PLUGIN_BASE_URL."/js/adminMenuScript.js",[ 'wp-api' ]);
+    // wp-content/plugins/payable_rendez_vous/js/adminMenuScript.js\
 }
 function rdv_menu_admin_prestations(){
     ?><h1>Configuration prestations</h1><?php
