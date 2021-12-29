@@ -4,7 +4,7 @@
         global $wpdb;
         global $PLUGIN_DB_PREFIX;
         $me=wp_get_current_user();
-        $sql="SINSERT INTO {$PLUGIN_DB_PREFIX}consultant_availabilities (`consultantID`, `day_of_week`, `time_start`, `time_end`) VALUES ($me->data->ID}, {$dayOfWeek}, '{$start}', '{$end}');";
+        $sql="INSERT INTO {$PLUGIN_DB_PREFIX}consultant_availabilities (`consultantID`, `day_of_week`, `time_start`, `time_end`) VALUES ({$me->data->ID}, {$dayOfWeek}, '{$start}', '{$end}');";
  
         return $wpdb->query($sql);
         }
