@@ -24,6 +24,7 @@ CREATE TABLE wp_rdv_take_apointment(
     stateID INT REFERENCES wp_rdv_apointment_state(ID) DEFAULT '-999',
     date DATE ,
     time TIME,
+    questions VARCHAR(2048) NOT NULL,
     validation_date TIMESTAMP DEFAULT now(),
     prestation_type_ID int REFERENCES wp_rdv_prestation_type(ID),
     PRIMARY KEY (consultantID,clientID, date, time)

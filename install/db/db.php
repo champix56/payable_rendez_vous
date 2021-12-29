@@ -52,6 +52,7 @@ function rdv_install_db()
         stateID INT DEFAULT '-999' REFERENCES {$PLUGIN_DB_PREFIX}apointment_state(ID),
         date DATE ,
         time TIME,
+        questions VARCHAR(2048) NOT NULL,
         validation_date TIMESTAMP DEFAULT now(),
         prestation_type_ID int REFERENCES {$PLUGIN_DB_PREFIX}prestation_type(ID),
         PRIMARY KEY (consultantID,clientID, date, time)
