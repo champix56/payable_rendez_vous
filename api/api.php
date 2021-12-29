@@ -27,7 +27,7 @@ function get_api_prestation_by_id($datas){
     global $wpdb;
     global $PLUGIN_DB_PREFIX;
     $sql="SELECT * FROM {$PLUGIN_DB_PREFIX}prestation_type WHERE ID={$datas['id']}";
-    return $wpdb->get_results($sql);
+    return $wpdb->get_results($sql)[0];
 
 }
 function get_api_consultants_availabilities($datas)
