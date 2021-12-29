@@ -17,7 +17,7 @@ if (strlen($message) > 0) {
     <?php
     foreach ($apointments as $apointment) {
     ?>
-        <?php get_vignette_rdv($apointment->clientID, $apointment->client_login, $apointment->date, $apointment->time, $apointment->display_name) ?>
+        <?php get_vignette_consultant_rdv($apointment->clientID, $apointment->client_login, $apointment->date, $apointment->time, $apointment->display_name) ?>
     <?php
     }
     ?></div>
@@ -27,7 +27,7 @@ if (strlen($message) > 0) {
     <?php
     foreach ($oldapointments as $apointment) {
     ?>
-        <?php get_vignette_rdv($apointment->clientID, $apointment->client_login, $apointment->date, $apointment->time, $apointment->display_name) ?>
+        <?php get_vignette_consultant_rdv($apointment->clientID, $apointment->client_login, $apointment->date, $apointment->time, $apointment->display_name) ?>
     <?php
     }
     ?></div>
