@@ -4,7 +4,7 @@ CREATE TABLE wp_rdv_consultant(
     PRIMARY KEY (ID)
 );
 CREATE TABLE wp_rdv_prestation_type(
-	ID int PRIMARY KEY,    
+	ID int PRIMARY KEY AUTO_INCREMENT,    
     short_name varchar(10),
     display_name varchar(34),
     description varchar (512),
@@ -12,7 +12,7 @@ CREATE TABLE wp_rdv_prestation_type(
     temp_nominal int
 );
 CREATE TABLE wp_rdv_apointment_state(
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     short_name VARCHAR(10),
     display_name VARCHAR(32),
     valid_level INT UNIQUE

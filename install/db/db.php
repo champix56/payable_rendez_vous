@@ -23,7 +23,7 @@ function rdv_install_db()
     error_log("\ttable {$PLUGIN_DB_PREFIX}consultants ->CREATED");
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}prestation_type(
-	    ID int PRIMARY KEY,
+	    ID int PRIMARY KEY AUTO_INCREMENT,
         short_name varchar(10),
         display_name varchar(34),
         description varchar (512),
@@ -35,7 +35,7 @@ function rdv_install_db()
     error_log("\ttable {$PLUGIN_DB_PREFIX}prestation_type ->CREATED");
     /****/
     $sql = "CREATE TABLE  {$PLUGIN_DB_PREFIX}apointment_state(
-        ID INT PRIMARY KEY,
+        ID INT PRIMARY KEY AUTO_INCREMENT,
         short_name VARCHAR(10),
         display_name VARCHAR(32),
         valid_level INT UNIQUE
