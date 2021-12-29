@@ -20,3 +20,18 @@
 - prepare menu for client &amp; consultants
 
 ----------
+
+## version 0.0.1
+
+ - install DB
+    - install default values
+
+- add REST API end point for ajax in admin-menu
+
+- consultant
+    - view apointments taken
+    - can set availabilities and unavailabilities
+
+- client 
+    - can view apointments already taken
+
