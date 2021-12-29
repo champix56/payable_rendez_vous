@@ -28,7 +28,7 @@ function rdv_install_db()
         display_name varchar(34),
         description varchar (512),
         montant DECIMAL,
-        temp_nominal int
+        temps_nominal int
     ) {$charset_collate};";
     //error_log($sql);
     dbDelta($sql);

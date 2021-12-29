@@ -9,7 +9,7 @@ CREATE TABLE wp_rdv_prestation_type(
     display_name varchar(34),
     description varchar (512),
     montant DECIMAL,
-    temp_nominal int
+    temps_nominal int
 );
 CREATE TABLE wp_rdv_apointment_state(
     ID INT PRIMARY KEY AUTO_INCREMENT,
