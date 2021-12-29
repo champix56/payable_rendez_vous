@@ -5,6 +5,12 @@ function rdv_menu_client_histo(){
 }
 function rdv_menu_client_take_apointment(){
     global $PLUGIN_DIR;
+    global $PLUGIN_BASE_URL;
+    wp_enqueue_script( "calendar-lib",$PLUGIN_BASE_URL."/js/libs/fullcalendar-5.10.1/lib/main.js", array(), '5.10.1');
+    wp_enqueue_style( "calendar-lib",$PLUGIN_BASE_URL."/js/libs/fullcalendar-5.10.1/lib/main.css"  );
+    wp_enqueue_script( "calendar",$PLUGIN_BASE_URL."/js/calendar.js", ['calendar-lib'], '5.10.1');
+    wp_enqueue_script( "client",$PLUGIN_BASE_URL."/js/client.js", ['common-wp-api-js']);
+
     ?><h1>Prendre rendez vous</h1><?php 
     include($PLUGIN_DIR."menus/client/take_apointment/take_apointment.php");
 

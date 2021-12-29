@@ -13,6 +13,7 @@ function rdv_menu_consultant_base_page(){
 }
 function rdv_menu_consultant_my_availabilities(){
     global $PLUGIN_DIR;
+    enqueue_consultant_menu_script();
     ?><h1>Espace disponibilités consultant</h1><?php
     include($PLUGIN_DIR."menus/consultant/availabilities/availabilities.php");
 }
