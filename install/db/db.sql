@@ -49,3 +49,4 @@ CREATE TABLE wp_rdv_rendezvous_follows(
     answer varchar(2048),
     PRIMARY KEY(questionID,consultationID)
 );
+INSERT INTO `wp_rdv_apointment_state` (`ID`, `short_name`, `display_name`, `valid_level`) VALUES ('-999', 'invalide', 'invalide', '-999');

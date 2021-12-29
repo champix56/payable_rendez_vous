@@ -43,7 +43,8 @@ function rdv_install_db()
     //error_log($sql);
     dbDelta($sql);
     error_log("\ttable {$PLUGIN_DB_PREFIX}apointment_state ->CREATED");
-    
+   
+
 /****/
     $sql = "CREATE TABLE {$PLUGIN_DB_PREFIX}take_apointment(
         consultationID BIGINT(20) UNIQUE AUTO_INCREMENT,
@@ -92,7 +93,10 @@ function rdv_install_db()
 //error_log($sql);
     dbDelta($sql);
     error_log("\ttable {$PLUGIN_DB_PREFIX}rendezvous_follows ->CREATED");
-
+     /**default state **/    
+     $sql="INSERT INTO `{$PLUGIN_DB_PREFIX}apointment_state` (`ID`, `short_name`, `display_name`, `valid_level`) VALUES ('-999', 'invalide', 'invalide', '-999');";
+     $wpdb->query($sql);
+     error_log("\tdefault value for {$PLUGIN_DB_PREFIX}apointment_state ->ID:-999 INVALID");
 }
 function rdv_uninstall_db()
 {
