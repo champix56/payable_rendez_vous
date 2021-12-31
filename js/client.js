@@ -55,7 +55,7 @@ function getDateTimeValidity(evt) {
     {
             selectDate.classList.add('invalid-input');
             selectTime.classList.add('invalid-input') ;
-            timeParsable!==NaN?
+            isNaN(timeParsable)?
             ShowMessageBox(`<h3>ATTENTION</h3>Indisponibilité le ${getNameOfDay(dayOfWeek)}<br/>`)
             :ShowMessageBox(`<h3>ATTENTION</h3>Indisponibilité le ${getNameOfDay(dayOfWeek)} à ${timeValue}<br/>`);
             ;
