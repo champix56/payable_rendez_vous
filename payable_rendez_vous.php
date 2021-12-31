@@ -16,6 +16,7 @@ register_deactivation_hook(__FILE__, 'rdv_uninstall_all');
 add_action('admin_menu',function(){
     global $PLUGIN_BASE_URL;
     wp_enqueue_script( 'wp-api' );
-    wp_enqueue_script( 'common-wp-api-js', $PLUGIN_BASE_URL."js/common.js", ['wp-api']);
+    wp_enqueue_script( 'moment.js', $PLUGIN_BASE_URL."js/libs/moment.js/moment-with-locales.js");
+    wp_enqueue_script( 'common-wp-api-js', $PLUGIN_BASE_URL."js/common.js", ['wp-api','moment.js']);
 })
 ?>
