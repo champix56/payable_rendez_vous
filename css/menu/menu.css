@@ -3,19 +3,29 @@
 .btn {
     color: white;
     padding: 5px 15px;
-    border: 1px solid #dfdfdf;
+    border: none;/*1px solid #dfdfdf;*/
     border-radius: 8px;
     background-color: lightseagreen;
+    
 }
-
-.btn.warning {
+.closed{
+    display:none;
+}
+.shown{
+    display: block;
+}
+.btn-warning {
     background-color: tomato;
 }
 
-.btn.primary {
+.btn-primary {
     background-color: skyblue;
 }
-
+.btn-primary:disabled {
+    background-color: rgb(76, 99, 109);
+}
+.invalid-input{border:1px dotted orangered !important;}
+.maybe-invalid-input{border:1px dotted orange !important;}
 .rdv_custom_menu {
     padding-right: 15px;
 }
@@ -46,6 +56,7 @@
     overflow-x: hidden;
     background-color: #fafafc;
 }
+.hide{display:none}
 .rdv_custom_menu{
     padding-right: 20px;
 }
