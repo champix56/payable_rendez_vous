@@ -36,3 +36,28 @@ function getNameOfDay(dayOfWeekNumber) {
             return '';
     }
 }
+function hideMessageBox() {
+   document.querySelector('#message').style.display='none';
+  
+}
+function ShowMessageBox(message)
+{
+    const msgBox=document.querySelector('#message');
+    if(!msgBox){console.log("Not message box defined in page");return null;}
+    msgBox.querySelector('p').innerHTML=message;
+    if(msgBox.style.display!=='block')jQuery('#message').slideDown();
+}
+function appendMessageBox(message) {
+    const msgBox=document.querySelector('#message');
+    if(!msgBox){console.log("Not message box defined in page");return null;}
+    msgBox.querySelector('p').innerHTML+=message;
+    if(msgBox.style.display!=='block')jQuery('#message').slideDown();
+}
+function initDisableableForm(formID,callback=undefined) {
+   const form= document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('form#'+formID).addEventListener('submit',function (evt) {
+            if(form.querySelector('button[type="submit"]').disabled || form.disabled){evt.preventDefault();return}
+            if(callback){evt.preventDefault();callback(evt);return;}
+        });
+    });
+}
