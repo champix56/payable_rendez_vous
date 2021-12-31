@@ -2,6 +2,7 @@
 global $PLUGIN_DIR;
 include_once $PLUGIN_DIR . "core/time.php";
 include_once $PLUGIN_DIR . "menus/consultant/availabilities/availabilities.func.php";
+require_once $PLUGIN_DIR . "menus/message.ui.php";
 $message="";
 if ((isset($_POST) && count($_POST) > 0)) {
     if (isset($_POST['add_unavailability'])) {
@@ -13,13 +14,12 @@ if ((isset($_POST) && count($_POST) > 0)) {
     }
 }
 
+show_message_viewer($message);
+
 $availabilities = list_consultant_availability();
 $unavailabilities = list_consultant_unavailability();
-if (strlen($message) > 0) {
-?><div id="message" class="updated notice is-dismissible">
-        <p>Update éfféctué</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Ignorer cette notification.</span></button>
-    </div>
-<?php } ?>
+
+?>
 <div class="rdv_custom_menu">
     <div style="display: flex;">
         <button class="btn" onclick="showAddAvailabilityPanel()">Ajouter disponibilité</button>
