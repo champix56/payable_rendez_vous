@@ -8,7 +8,7 @@ $consultants = get_consultants();
 show_message_viewer("");
 ?>
 <div class="rdv_custom_menu">
-    <form id="client_take_apointment_form">
+    <form id="client_take_apointment_form" action="" method="POST">
         <div class="flex center-child" id="client_take_apointment_consultant_block" style="justify-content: space-around;">
             <div>
                 <label>Selectionner consultant :</label><br />
@@ -48,6 +48,7 @@ foreach ($consultants as $value) {
                     <optgroup label="questions">
                         <option value="h">3 questions/35euros</option>
                     </optgroup> -->
+                    <option value="-1">Selectionnez une prestation</option>
                     <?php $types = get_prestation_type();
 foreach ($types as $presta) {?><option value="<?=$presta->ID?>"><?=$presta->display_name?>/<?=$presta->montant?>&euro;</option><?php }?>
                 </select>
@@ -56,19 +57,12 @@ foreach ($types as $presta) {?><option value="<?=$presta->ID?>"><?=$presta->disp
                 </div>
                 <div class="presta-infos">
                     <div class="flex" style="justify-content: space-between;">
-                        <div>
-                            <h5>Prix</h5><?=$types[0]->montant?>&euro;
-                        </div>
-                        <div>
-                            <h5>temps nominal</h5><?=$types[0]->temps_nominal?>min
-                        </div>
                     </div>
-                    <h5>Description</h5><?=$types[0]->description?>
                 </div>
                 <hr />
-                <div class="questions_content">
+                <div class="questions_content hide">
                     <label for="client_take_apointment_question_content">Saisiez vos questions / domaines</label>
-                    <textarea name="apointment_client_ask" id="client_take_apointment_question_content" rows="8"></textarea>
+                    <textarea name="questions" id="client_take_apointment_question_content" rows="8"></textarea>
                 </div>
             </div>
         </div>

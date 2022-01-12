@@ -22,7 +22,7 @@
     background-color: skyblue;
 }
 .btn-primary:disabled {
-    background-color: rgb(76, 99, 109);
+    background-color: rgb(76, 99, 109,0.08);
 }
 .invalid-input{border:1px dotted orangered !important;}
 .maybe-invalid-input{border:1px dotted orange !important;}
